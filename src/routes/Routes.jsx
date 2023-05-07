@@ -1,11 +1,17 @@
 /* eslint-disable no-unused-vars */
-import { createBrowserRouter } from "react-router-dom";
+import {createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 import Recepies from "../layout/Recepies";
 import ChefRecepies from "../pages/Home/ChefRecepies/ChefRecepies";
+import LoginLayout from "../layout/LoginLayout";
+import RegistrationLayout from "../layout/RegistrationLayout";
+import Login from "../pages/Login/Login/Login";
+import Register from "../pages/Login/Register/Register";
+
 
  const router = createBrowserRouter([
+    
     {
         path: '/',
         element: <Main></Main>,
@@ -27,7 +33,17 @@ import ChefRecepies from "../pages/Home/ChefRecepies/ChefRecepies";
             }
         ]
 
+    },
+    {
+        path: '/login',
+        element: <LoginLayout></LoginLayout>
+
+    },
+    {
+        path: '/register',
+        element: <RegistrationLayout></RegistrationLayout>
     }
+    
  ])
 
  export default router;
