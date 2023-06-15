@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
@@ -7,6 +7,8 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 
 
 const Register = () => {
+
+  const [error, setError] = useState('');
 
   const { createUser } = useContext(AuthContext);
 
@@ -26,6 +28,7 @@ const Register = () => {
     })
     .catch(error =>{
       console.log(error);
+      setError(error.message);
     })
   }
   return (
@@ -50,7 +53,7 @@ const Register = () => {
 
 <Form.Group className="mb-3" controlId="formBasicPassword">
 <Form.Label>Password</Form.Label>
-<Form.Control name='password' type="password" placeholder="Password" required/>
+<Form.Control maxLength={6} name='password' type="password" placeholder="Password" required/>
 </Form.Group>
 <Form.Group className="mb-3" controlId="formBasicCheckbox">
 <Form.Check type="checkbox" name='accept' label={<>Accept <Link to='/terms'>Terms and Condition</Link></>} required />
@@ -62,9 +65,11 @@ Register
 <Form.Text className="text-muted text-secondary">
   Already have an account? <Link to='/login'>Login Now</Link>
 </Form.Text>
-<Form.Text className="text-muted text-success">
-  
+{
+  <Form.Text className="text-muted text-success">
+  {error}
 </Form.Text>
+}
 <Form.Text className="text-muted text-danger">
   
 </Form.Text>
