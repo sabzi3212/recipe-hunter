@@ -1,16 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 
 
 const Register = () => {
 
+
   const [error, setError] = useState('');
 
   const { createUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleRegister = event =>{
     event.preventDefault();
@@ -25,6 +28,7 @@ const Register = () => {
     .then(result =>{
       const createdUser =result.user;
       console.log(createdUser);
+      navigate('/')
     })
     .catch(error =>{
       console.log(error);
