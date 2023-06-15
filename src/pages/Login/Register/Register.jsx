@@ -57,7 +57,7 @@ const Register = () => {
 
 <Form.Group className="mb-3" controlId="formBasicPassword">
 <Form.Label>Password</Form.Label>
-<Form.Control maxLength={6} name='password' type="password" placeholder="Password" required/>
+<Form.Control maxLength={5} name='password' type="password" placeholder="Password" required/>
 </Form.Group>
 <Form.Group className="mb-3" controlId="formBasicCheckbox">
 <Form.Check type="checkbox" name='accept' label={<>Accept <Link to='/terms'>Terms and Condition</Link></>} required />
