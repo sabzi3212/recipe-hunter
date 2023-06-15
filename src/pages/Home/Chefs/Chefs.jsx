@@ -3,19 +3,23 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, CardGroup, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
 const Chefs = () => {
   const [chefs, setChefs] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/chefs')
+    fetch('https://assignment-10-server-seven-green.vercel.app/chefs')
       .then(res => res.json())
       .then(data => setChefs(data))
       .catch(error => console.error(error))
   }, [])
   return (
-    <Row xs={1} md={3} className="g-4">
+    <div className='mt-5'>
+      <h1 className='text-center mb-5'>Our chefs</h1>
+      <Row xs={1} md={3} className="g-4">
       {/* {
             chefs.map(c => <div key={c._id} className="g-2 text-center">
               <Col>
@@ -50,6 +54,7 @@ const Chefs = () => {
         </Col>
         )}
     </Row>
+    </div>
 
   );
 };

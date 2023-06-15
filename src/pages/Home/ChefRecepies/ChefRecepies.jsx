@@ -25,7 +25,7 @@ const ChefRecepies = () => {
 
   useEffect(() => {
 
-    fetch('http://localhost:5000/recepies')
+    fetch('https://assignment-10-server-seven-green.vercel.app/recepies')
       .then(res => res.json())
       .then(data => setRecepies(data.filter(r => r._id == params.id)))
       .catch(error => console.error(error))

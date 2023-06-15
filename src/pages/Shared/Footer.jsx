@@ -14,10 +14,10 @@ const Footer = () => {
           <Col xs={12} sm={6} md={4}>
             <ul>
               <li>
-                <a href="/recipes">Recipes</a>
+                <a href="/">Recipes</a>
               </li>
               <li>
-                <a href="/blog">Blog</a>
+                <a href="/blogs">Blog</a>
               </li>
               <li>
                 <a href="/chefs">Chefs</a>

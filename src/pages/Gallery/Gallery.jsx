@@ -4,6 +4,7 @@ import { Col, Container, Image, Row } from 'react-bootstrap';
 const Gallery = () => {
     return (
         <Container className='mt-5'>
+            <h1 className='text-center mb-5'>Few of our best clicks</h1>
       <Row>
         <Col xs={12} md={4}>
           <Image style={{ width: '400px', height: '400px' }} src='https://i.ibb.co/VjT8SkT/taylor-kiser-POFG828-GQc-unsplash.jpg' className="gallery-image" fluid />

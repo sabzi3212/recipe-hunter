@@ -4,6 +4,7 @@ import { Col, Container, Image, Row } from 'react-bootstrap';
 const About = () => {
     return (
         <Container fluid className="bg-dark text-white py-5 mt-5 ">
+            <h1 className='text-center mb-5'>Who are we?</h1>
       <Row className="justify-content-center align-items-center">
         <Col md={6} className="text-center">
           <h1 className="display-4">About Us</h1>

@@ -32,7 +32,7 @@ import BlogsLayout from "../layout/BlogsLayout";
             {
                 path:':id',
                 element:<ChefRecepies></ChefRecepies>,
-                loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment-10-server-seven-green.vercel.app/chefs/${params.id}`)
             }
         ]
 
