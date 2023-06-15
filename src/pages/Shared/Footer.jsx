@@ -5,14 +5,37 @@ import { Form } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="mt-5">
-      <Container fluid>
-        <Row className="border-top justify-content-between p-3">
-          <Col className="p-0" md={3} sm={12}>
-            <a href="#">Privacy Policy</a>
+      <footer className="footer mt-5" style={{ backgroundColor: 'black', color: 'white' }}>
+      <Container>
+        <Row>
+          <Col xs={12} sm={12} md={4}>
+            <h4>Recipy Book</h4>
           </Col>
-          <Col className="p-0 d-flex justify-content-end" md={3}>
-            <p>© 2023 Company, Inc.</p>
+          <Col xs={12} sm={6} md={4}>
+            <ul>
+              <li>
+                <a href="/recipes">Recipes</a>
+              </li>
+              <li>
+                <a href="/blog">Blog</a>
+              </li>
+              <li>
+                <a href="/chefs">Chefs</a>
+              </li>
+            </ul>
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <ul className="social-links">
+              <li>
+                <a href="https://www.facebook.com">Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.twitter.com">Twitter</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com">Instagram</a>
+              </li>
+            </ul>
           </Col>
         </Row>
       </Container>
