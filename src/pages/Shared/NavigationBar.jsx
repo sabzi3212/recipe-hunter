@@ -44,9 +44,11 @@ const NavigationBar = () => {
         <li className="nav-item">
           <a className="nav-link" href="#">Login</a>
         </li>
+        <Link to='/register'>
         <li className="nav-item ms-auto">
           <a className="nav-link" href="#">Register</a>
         </li>
+        </Link>
       </ul>
     </div>
   </div>
