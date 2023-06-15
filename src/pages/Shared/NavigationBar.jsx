@@ -47,9 +47,6 @@ const NavigationBar = () => {
             <li className="nav-item">
               <a className="nav-link" href="#">Blog</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Pricing</a>
-            </li>
             {
               user ?
                 <Link>

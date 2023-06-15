@@ -38,7 +38,10 @@ const Chefs = () => {
           <Card>
             <Card.Img variant="top" style={{ width: '400px', height: '400px' }} src={c.image_url} />
             <Card.Body className='text-center'>
-              <Card.Title>{c.author.name}</Card.Title>
+              <Card.Title>Name: {c.author.name}</Card.Title>
+              <Card.Title>Experiance: {c.author.experiance}</Card.Title>
+              <Card.Title>Recepies: {c.author.number_of_recepies}</Card.Title>
+              <Card.Title>Likes: {c.author.likes}</Card.Title>
               <Link to={`/chefs/${c._id}`}> <Button variant="secondary">View Details</Button></Link>
             </Card.Body>
           </Card>
