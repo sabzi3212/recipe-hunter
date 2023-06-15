@@ -3,14 +3,15 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-  const {signInUser} = useContext(AuthContext);
+  const {signInUser , googleSignIn} = useContext(AuthContext);
   const [success, setSuccess] =useState('');
   const navigate = useNavigate();
   const location = useLocation();
   console.log('login page location', location);
-  const from = location.state?.from?.pathname || '/'
+  const from = location.state?.from?.pathname || '/';
   const handleLogin = event =>{
     event.preventDefault();
     const form = event.target;
@@ -27,7 +28,17 @@ const Login = () => {
     .catch(error =>{
       console.log(error);
     })
+
   }
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+        .then(result => {
+            console.log(result.user);
+            navigate(from, {replace: true});
+        })
+        .catch(error => console.log(error))
+}
   return (
     <Container className='mx-auto w-25'>
             <h3>Please Login</h3>
@@ -51,12 +62,11 @@ const Login = () => {
       <br />
       <Form.Text className="text-muted text-secondary">
           Don't have an account? <Link to='/register'>Register Now</Link>
-        </Form.Text>
-      <Form.Text className="text-muted text-success">
-          
-        </Form.Text>
-        <Form.Text className="text-muted text-danger">
-          
+        </Form.Text> <br />
+        <Form.Text className="text-muted text-danger mx-auto my-auto">
+        <Button onClick={handleGoogleSignIn} variant="secondary" size="sm">
+          <FaGoogle></FaGoogle>
+        </Button>
         </Form.Text>
         <p>{success}</p>
     </Form>
