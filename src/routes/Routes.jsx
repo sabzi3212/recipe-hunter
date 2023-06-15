@@ -10,6 +10,7 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import ErrorLayout from "../layout/ErrorLayout";
+import BlogsLayout from "../layout/BlogsLayout";
 
 
  const router = createBrowserRouter([
@@ -44,6 +45,10 @@ import ErrorLayout from "../layout/ErrorLayout";
     {
         path: '/register',
         element: <RegistrationLayout></RegistrationLayout>
+    },
+    {
+        path: '/blogs',
+        element: <BlogsLayout></BlogsLayout>
     },
     {
         path: '*',

@@ -30,36 +30,81 @@ const NavigationBar = () => {
     //     </Navbar.Collapse>
     //   </Container>
     // </Navbar>
+    // <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    //   <div className="container-fluid">
+    //     <a className="navbar-brand" href="#">RecepyBook</a>
+    //     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    //       <span className="navbar-toggler-icon"></span>
+    //     </button>
+    //     <div className="collapse navbar-collapse" id="navbarNavDropdown">
+    //       <ul className="navbar-nav">
+    //         <Link to='/'>
+    //           <li className="nav-item">
+    //             <a className="nav-link active" aria-current="page" href="#">Home</a>
+    //           </li>
+
+    //         </Link>
+    //         <li className="nav-item">
+    //           <a className="nav-link" href="#">Blog</a>
+    //         </li>
+    //         {
+    //           user ?
+    //             <Link>
+    //               <Button onClick={handleLogout} variant="secondary">LogOut</Button>
+    //             </Link>
+    //             :
+    //             <Link to='/login'>
+    //             <li className="nav-item">
+    //                 <a className="nav-link" href="#">Login</a>
+    //               </li>
+
+    //             </Link>
+    //     }
+    //       </ul>
+    //     </div>
+    //   </div>
+    // </nav>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">RecepyBook</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <Link to='/'><div className="navbar-brand">RecepyBook</div></Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
-            <Link to='/'>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-
-            </Link>
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-center">
             <li className="nav-item">
-              <a className="nav-link" href="#">Blog</a>
+              <Link to="/" className="nav-link active">
+                Home
+              </Link>
             </li>
-            {
-              user ?
-                <Link>
-                  <Button onClick={handleLogout} variant="secondary">LogOut</Button>
+            <li className="nav-item">
+              <Link to="/blogs" className="nav-link">
+                Blog
+              </Link>
+            </li>
+          </ul>
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            {user ? (
+              <li className="nav-item">
+                <Button onClick={handleLogout} variant="secondary">
+                  Logout
+                </Button>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <Link to="/login" className="nav-link">
+                  Login
                 </Link>
-                :
-                <Link to='/login'>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Login</a>
-                  </li>
-
-                </Link>
-        }
+              </li>
+            )}
           </ul>
         </div>
       </div>
